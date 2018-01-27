@@ -40,6 +40,7 @@
     <families />
     <layout-folder>
         <layout>Default.xml</layout>
+        <layout>Menu.xml</layout>
     </layout-folder>
     <event-folder />
     <global-instances />
