@@ -9,9 +9,17 @@
     <app-id>com.zslaboratories.goodbye</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25200</saved-with-version>
-    <used-plugins />
+    <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+    </used-plugins>
     <used-behaviors />
-    <used-effects />
+    <used-effects>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -36,14 +44,59 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder />
+    <object-folder>
+        <object-type name="GameTitle" sid="200995803984850">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ButtonTop" sid="253023387623036">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="715437085624632" speed="5">
+                    <frame duration="1" hotspotX="0.502242" hotspotY="0.502591" original-source="D:\Projects\Goodbye-GGJ18\Textures\Pink.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonBottom" sid="142729793758538">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="762653935956662" speed="5">
+                    <frame duration="1" hotspotX="0.502242" hotspotY="0.502591" original-source="D:\Projects\Goodbye-GGJ18\Textures\Yellow.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BtnText" sid="966032691116398">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Gamepad" sid="204769758971985">
+            <plugin id="gamepad" />
+        </object-type>
+        <object-type name="Browser" sid="860048929104348">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Keyboard" sid="160417275132479">
+            <plugin id="Keyboard" />
+        </object-type>
+    </object-folder>
     <families />
     <layout-folder>
         <layout>Default.xml</layout>
+        <layout>Level1.xml</layout>
         <layout>Menu.xml</layout>
     </layout-folder>
-    <event-folder />
-    <global-instances />
+    <event-folder>
+        <event-sheet>Menu.xml</event-sheet>
+        <event-sheet>Base.xml</event-sheet>
+        <event-sheet>Game.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Gamepad" uid="8">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="9" />
+        <global-instance type="Keyboard" uid="10" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

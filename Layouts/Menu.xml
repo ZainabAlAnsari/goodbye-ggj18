@@ -2,7 +2,7 @@
 <c2layout>
     <name>Menu</name>
     <sid>943845801793624</sid>
-    <event-sheet></event-sheet>
+    <event-sheet>Menu</event-sheet>
     <size>
         <width>1280</width>
         <height>720</height>
@@ -15,7 +15,7 @@
     <layers>
         <layer name="Background" sid="118576925546924">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>85,0,0</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -46,10 +46,221 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="ButtonBottom" uid="3">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>623.631530762</x>
+                        <y>370.352539063</y>
+                        <z>0</z>
+                        <width>348.633331299</width>
+                        <height>99.312042236</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502242148</hotspotX>
+                        <hotspotY>0.502590656</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GameTitle" uid="0">
+                    <properties>
+                        <text>Goodbye</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Garamond,-133,700,0</font>
+                        <color>255,253,170</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>382</x>
+                        <y>92</y>
+                        <z>0</z>
+                        <width>512</width>
+                        <height>192</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GameTitle" uid="1">
+                    <properties>
+                        <text>Goodbye</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Garamond,-133,700,0</font>
+                        <color>255,170,170</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>386.727172852</x>
+                        <y>95.999984741</y>
+                        <z>0</z>
+                        <width>512</width>
+                        <height>192</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ButtonTop" uid="2">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>636.071716309</x>
+                        <y>380</y>
+                        <z>0</z>
+                        <width>350</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502242148</hotspotX>
+                        <hotspotY>0.502590656</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BtnText" uid="4">
+                    <properties>
+                        <text>Play (A)</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Garamond,-64,700,0</font>
+                        <color>6,19,57</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>519</x>
+                        <y>340</y>
+                        <z>0</z>
+                        <width>251</width>
+                        <height>88</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ButtonBottom" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>624</x>
+                        <y>528</y>
+                        <z>0</z>
+                        <width>348.633331299</width>
+                        <height>99.312042236</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502242148</hotspotX>
+                        <hotspotY>0.502590656</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ButtonTop" uid="6">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>637</x>
+                        <y>538</y>
+                        <z>0</z>
+                        <width>350</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502242148</hotspotX>
+                        <hotspotY>0.502590656</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BtnText" uid="7">
+                    <properties>
+                        <text>Quit (Back)</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Garamond,-64,700,0</font>
+                        <color>6,19,57</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>475</x>
+                        <y>495</y>
+                        <z>0</z>
+                        <width>346</width>
+                        <height>88</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
     </layers>
     <nonworld-instances />
-    <effects />
+    <effects>
+        <effect-type name="Pulse">
+            <effect id="pulse" />
+            <effect-instance type="Pulse">
+                <parameters>
+                    <center-x>0.5</center-x>
+                    <center-y>0.5</center-y>
+                    <frequency>100</frequency>
+                    <intensity>0.02</intensity>
+                    <lighting>0.5</lighting>
+                    <speed>5</speed>
+                </parameters>
+            </effect-instance>
+        </effect-type>
+    </effects>
 </c2layout>
