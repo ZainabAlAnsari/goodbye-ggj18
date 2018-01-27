@@ -16,12 +16,12 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>2560</width>
-        <height>1440</height>
+        <width>1280</width>
+        <height>720</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <first-layout>Menu</first-layout>
+    <first-layout>Default</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -39,13 +39,9 @@
     <object-folder />
     <families />
     <layout-folder>
-        <layout>Menu.xml</layout>
-        <layout>Main Game.xml</layout>
+        <layout>Default.xml</layout>
     </layout-folder>
-    <event-folder>
-        <event-sheet>Menu.xml</event-sheet>
-        <event-sheet>Main Game.xml</event-sheet>
-    </event-folder>
+    <event-folder />
     <global-instances />
     <sounds-folder />
     <music-folder />
