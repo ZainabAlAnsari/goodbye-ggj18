@@ -14,9 +14,13 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+    </used-behaviors>
     <used-effects>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
     </used-effects>
@@ -76,12 +80,74 @@
         <object-type name="Keyboard" sid="160417275132479">
             <plugin id="Keyboard" />
         </object-type>
+        <object-type name="Street" sid="910999408117976">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projects\Goodbye-GGJ18\Textures\Street.png" />
+        </object-type>
+        <object-type name="Player" sid="583409342119717">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="901457283231568">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="239207917630681">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="153023343283979" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="6" loop="0" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="994063200080738" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Shop" sid="703048002457591">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="298345490980788" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projects\Goodbye-GGJ18\Textures\Shop.png">
+                        <collision-poly>
+                            <point x="0.0820313" y="0.0950226" />
+                            <point x="0.5" y="0.00226244" />
+                            <point x="0.916016" y="0.0972851" />
+                            <point x="0.890625" y="0.873303" />
+                            <point x="0.5" y="1" />
+                            <point x="0.109375" y="0.873303" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Building" sid="322887198526070">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="280111397354845" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projects\Goodbye-GGJ18\Textures\Building.png">
+                        <collision-poly>
+                            <point x="0.0570175" y="0.0599078" />
+                            <point x="0.949561" y="0.0529954" />
+                            <point x="0.975877" y="0.5" />
+                            <point x="0.964912" y="0.963134" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0811404" y="0.914747" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Default.xml</layout>
-        <layout>Level1.xml</layout>
         <layout>Menu.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Menu.xml</event-sheet>

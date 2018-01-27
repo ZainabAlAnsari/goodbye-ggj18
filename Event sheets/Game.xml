@@ -4,5 +4,36 @@
     <name>Game</name>
     <events>
         <include>Base</include>
+        <event-block sid="513755490452567">
+            <conditions>
+                <condition id="3" name="Is button down" sid="378719730850727" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="670317319883232" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="475573073077406" type="Player">
+                    <param id="0" name="Animation">&quot;Walking&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="130491686227783">
+            <conditions>
+                <condition id="7" name="On button released" sid="676036963950420" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="656986966276470" type="Player">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
