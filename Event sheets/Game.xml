@@ -142,8 +142,80 @@
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="720604212645946" type="Player">
+                            <param id="0" name="Instance variable">Luminance</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">130</param>
+                        </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="0" name="Set text" sid="580359444991366" type="HelpRequest">
+                            <param id="0" name="Text">&quot;You have passed away, and gone to heaven with lots of people grieving you...&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="471019157382397" type="TextBackground">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="503107349018204" type="HelpRequest">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="748770501829024">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="329982571033872" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="691698263183848" type="Player">
+                            <param id="0" name="Instance variable">CurrentHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="331348921346195" type="Player">
+                            <param id="0" name="Instance variable">Luminance</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="272973271689783" type="HelpRequest">
+                            <param id="0" name="Text">&quot;You have died, and your ending was not good...&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="922889109587916" type="TextBackground">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="962958926064372" type="HelpRequest">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="833875686596257">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="758913144687273" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="157787757801601" type="Player">
+                            <param id="0" name="Instance variable">CurrentHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="543466163977888" type="Player">
+                            <param id="0" name="Instance variable">Luminance</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="156028370034709" type="Player">
+                            <param id="0" name="Instance variable">Luminance</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">130</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="593549652788004" type="HelpRequest">
+                            <param id="0" name="Text">&quot;You have passed away, and your friends and family will miss you.&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="262160305655510" type="TextBackground">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="214635902436667" type="HelpRequest">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
