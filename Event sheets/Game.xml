@@ -35,5 +35,11 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="770879924491023">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="556220426962259" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>

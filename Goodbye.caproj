@@ -142,8 +142,77 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="PoliceCar" sid="566390889305969">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="254494868621145" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projects\Goodbye-GGJ18\Textures\PoliceCar.png">
+                        <collision-poly>
+                            <point x="0.146597" y="0.373333" />
+                            <point x="0.5" y="0.14" />
+                            <point x="0.842932" y="0.4" />
+                            <point x="0.992147" y="0.5" />
+                            <point x="0.910995" y="0.773333" />
+                            <point x="0.5" y="0.826667" />
+                            <point x="0.0863874" y="0.78" />
+                            <point x="0.0235602" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CarStationWagon" sid="371061689749369">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="625885930463573" speed="5">
+                    <frame duration="1" hotspotX="0.501362" hotspotY="0.503876" original-source="D:\Projects\Goodbye-GGJ18\Textures\Car.png">
+                        <collision-poly>
+                            <point x="0.106267" y="0.302326" />
+                            <point x="0.498638" y="0" />
+                            <point x="0.978202" y="0.0620155" />
+                            <point x="1" y="0.496124" />
+                            <point x="0.901907" y="0.72093" />
+                            <point x="0.498638" y="0.79845" />
+                            <point x="0.0653951" y="0.813953" />
+                            <point x="0.0108992" y="0.496124" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CarConvertible" sid="649850500585693">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983632861513672" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503704" original-source="D:\Projects\Goodbye-GGJ18\Textures\CarConvertible.png">
+                        <collision-poly>
+                            <point x="0.0813954" y="0.155556" />
+                            <point x="0.5" y="0.0740741" />
+                            <point x="0.972868" y="0.496296" />
+                            <point x="0.883721" y="0.777778" />
+                            <point x="0.120155" y="0.77037" />
+                            <point x="0.0697674" y="0.496296" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Cars" plugin-id="Sprite" sid="987583730477494">
+            <members>
+                <member>CarConvertible</member>
+                <member>CarStationWagon</member>
+                <member>PoliceCar</member>
+            </members>
+        </family>
+        <family name="Buildings" plugin-id="Sprite" sid="603126799987395">
+            <members>
+                <member>Building</member>
+                <member>Shop</member>
+            </members>
+        </family>
+    </families>
     <layout-folder>
         <layout>Default.xml</layout>
         <layout>Menu.xml</layout>

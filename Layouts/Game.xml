@@ -18,7 +18,7 @@
             <background-color>181,199,255</background-color>
             <transparent>0</transparent>
             <parallax>
-                <x>0.25</x>
+                <x>1</x>
                 <y>1</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
@@ -61,7 +61,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>836</x>
+                        <x>864</x>
                         <y>256</y>
                         <z>0</z>
                         <width>320</width>
@@ -150,7 +150,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>3424</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>320</width>
                         <height>320</height>
@@ -194,7 +194,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>4608</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>320</width>
                         <height>320</height>
@@ -238,7 +238,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>6080</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>320</width>
                         <height>320</height>
@@ -414,7 +414,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>11328</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>320</width>
                         <height>320</height>
@@ -458,7 +458,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>12512</x>
-                        <y>288</y>
+                        <y>256</y>
                         <z>0</z>
                         <width>320</width>
                         <height>320</height>
@@ -469,15 +469,81 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="CarStationWagon" uid="34">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>9248</x>
+                        <y>352</y>
+                        <z>0</z>
+                        <width>320</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.501362383</hotspotX>
+                        <hotspotY>0.503875971</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PoliceCar" uid="33">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>5280</x>
+                        <y>352</y>
+                        <z>0</z>
+                        <width>288</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CarConvertible" uid="35">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1408</x>
+                        <y>352</y>
+                        <z>0</z>
+                        <width>258</width>
+                        <height>135</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.503703713</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
-        <layer name="Midground" sid="985530703999602">
+        <layer name="Foreground" sid="642267759738968">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
-                <x>0.5</x>
+                <x>0.9</x>
                 <y>1</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
@@ -511,7 +577,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Foreground" sid="642267759738968">
+        <layer name="Player" sid="570538726835134">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -555,7 +621,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>128</x>
+                        <x>640</x>
                         <y>480</y>
                         <z>0</z>
                         <width>96</width>
