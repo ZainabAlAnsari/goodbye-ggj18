@@ -4,7 +4,7 @@
     <name>Game</name>
     <events>
         <include>Base</include>
-        <comment>Initialization</comment>
+        <comment>Initialize the game</comment>
         <event-block sid="922454965106287">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="967098991270754" type="System" />
@@ -22,34 +22,134 @@
                     <param id="0" name="Name">&quot;SetHealth&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-            </actions>
-        </event-block>
-        <comment>Gameplay</comment>
-        <event-block sid="597897581796237">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="724325101095458" type="System">
-                    <param id="0" name="Interval (seconds)">5.0</param>
-                </condition>
-                <condition id="-7" name="Compare time" sid="732765696145001" type="System">
-                    <param id="0" name="Comparison">5</param>
-                    <param id="1" name="Time (seconds)">20.0</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="658574984894374" type="Player">
-                    <param id="0" name="Instance variable">CurrentHealth</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="343266219435065" type="Function">
-                    <param id="0" name="Name">&quot;HurtPlayer&quot;</param>
+                <action behavior="Pin" id="0" name="Pin to object" sid="237712011055795" type="LightBar">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="489279084450150" type="Player">
+                    <param id="0" name="Instance variable">CurrentLight</param>
+                    <param id="1" name="Value">Self.MinLight</param>
+                </action>
+                <action id="0" name="Call function" sid="333284229507871" type="Function">
+                    <param id="0" name="Name">&quot;SetLight&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="426261391807261" type="Function">
+                    <param id="0" name="Name">&quot;SetHelpRequestsArray&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="631409080615912" type="HelpRequest">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="195283335779991" type="TextBackground">
+                    <param id="0" name="Pin to">HelpRequest</param>
+                    <param id="1" name="Mode">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="372341037739521" title="Player Movement">
+        <event-group description="" sid="186524737169077" title="Gameplay">
             <sub-events>
-                <comment>Movement</comment>
+                <comment>Control player&apos;s health. Start substracting after 20 seconds from game start.</comment>
+                <event-block sid="597897581796237">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="724325101095458" type="System">
+                            <param id="0" name="Interval (seconds)">5.0</param>
+                        </condition>
+                        <condition id="-7" name="Compare time" sid="732765696145001" type="System">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Time (seconds)">20.0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="658574984894374" type="Player">
+                            <param id="0" name="Instance variable">CurrentHealth</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="343266219435065" type="Function">
+                            <param id="0" name="Name">&quot;HurtPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Test the player..</comment>
+                <event-block sid="768134549089413">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="243056805518881" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="626050500953447" type="Function">
+                            <param id="0" name="Name">&quot;AskPlayerToDoGood&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="113871986570911">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="758658464973739" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="887673887076291" type="HelpRequestsArray">
+                            <param id="0" name="Instance variable">AQuestionIsBeingAsked</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="975476241593412" type="Function">
+                            <param id="0" name="Name">&quot;DoGood&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="824734074616350" type="Function">
+                            <param id="0" name="Name">&quot;ResetAfterAQuestionIsAsked&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="421415321221589">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="559100640149387" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="355932527875048" type="HelpRequestsArray">
+                            <param id="0" name="Instance variable">AQuestionIsBeingAsked</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="567210460629759" type="Function">
+                            <param id="0" name="Name">&quot;NotDoGood&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="493286987644018" type="Function">
+                            <param id="0" name="Name">&quot;ResetAfterAQuestionIsAsked&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>if player died..</comment>
+                <event-block sid="112500669694615">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="479799685833433" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="963676049469726" type="Player">
+                            <param id="0" name="Instance variable">CurrentHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="372341037739521" title="Player Controls">
+            <sub-events>
+                <comment>Go right</comment>
                 <event-block sid="513755490452567">
                     <conditions>
                         <condition id="3" name="Is button down" sid="378719730850727" type="Gamepad">
@@ -67,6 +167,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Stop</comment>
                 <event-block sid="130491686227783">
                     <conditions>
                         <condition id="7" name="On button released" sid="676036963950420" type="Gamepad">
@@ -85,7 +186,25 @@
         </event-group>
         <event-group description="" sid="664449203926071" title="Functions">
             <sub-events>
-                <comment>Functions</comment>
+                <event-block sid="379030423887331">
+                    <conditions>
+                        <condition id="0" name="On function" sid="673545048014090" type="Function">
+                            <param id="0" name="Name">&quot;ResetAfterAQuestionIsAsked&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="332913327508383" type="TextBackground">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="364282588684759" type="HelpRequest">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="239377464175387" type="HelpRequestsArray">
+                            <param id="0" name="Instance variable">AQuestionIsBeingAsked</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="514730849728663">
                     <conditions>
                         <condition id="0" name="On function" sid="908322853705607" type="Function">
@@ -115,8 +234,142 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-5" name="Set width" sid="596014355545928" type="PlayerBars">
+                        <action id="-5" name="Set width" sid="596014355545928" type="HealthBar">
                             <param id="0" name="Width">Player.CurrentHealth</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="272448139012505">
+                    <conditions>
+                        <condition id="0" name="On function" sid="394825594239820" type="Function">
+                            <param id="0" name="Name">&quot;DoGood&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="122537433597144" type="Player">
+                            <param id="0" name="Instance variable">CurrentLight</param>
+                            <param id="1" name="Value">16</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="616844328999514" type="Player">
+                            <param id="0" name="Instance variable">Luminance</param>
+                            <param id="1" name="Value">6.25</param>
+                        </action>
+                        <action id="0" name="Call function" sid="275263046288370" type="Function">
+                            <param id="0" name="Name">&quot;SetLight&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="982683679669197">
+                    <conditions>
+                        <condition id="0" name="On function" sid="530833159868013" type="Function">
+                            <param id="0" name="Name">&quot;NotDoGood&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="450194725843058" type="Player">
+                            <param id="0" name="Instance variable">CurrentLight</param>
+                            <param id="1" name="Value">16</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="267911836803267" type="Player">
+                            <param id="0" name="Instance variable">Luminance</param>
+                            <param id="1" name="Value">6.25</param>
+                        </action>
+                        <action id="0" name="Call function" sid="626046659606052" type="Function">
+                            <param id="0" name="Name">&quot;SetLight&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="799218737701509">
+                    <conditions>
+                        <condition id="0" name="On function" sid="366445253554308" type="Function">
+                            <param id="0" name="Name">&quot;SetLight&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="104578809871684" type="LightBar">
+                            <param id="0" name="Width">Player.CurrentLight</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="727762766004709" type="Player">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">Self.Luminance</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="377539986814218">
+                    <conditions>
+                        <condition id="0" name="On function" sid="384445949983972" type="Function">
+                            <param id="0" name="Name">&quot;AskPlayerToDoGood&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="464718364599007" type="HelpRequest">
+                            <param id="0" name="Text">HelpRequestsArray.At(HelpRequestsArray.LastAskedQuestion+1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="674572579201564" type="HelpRequestsArray">
+                            <param id="0" name="Instance variable">LastAskedQuestion</param>
+                            <param id="1" name="Value">Self.LastAskedQuestion+1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="807169206860253" type="TextBackground">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="958557219010045" type="HelpRequest">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="385588873238886" type="HelpRequestsArray">
+                            <param id="0" name="Instance variable">AQuestionIsBeingAsked</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="895646655492432">
+                    <conditions>
+                        <condition id="0" name="On function" sid="895350173567681" type="Function">
+                            <param id="0" name="Name">&quot;SetHelpRequestsArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Insert" sid="817219739762387" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;Your back hurts but a grandma dropped her fruit basket. Help her pick it up? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">0</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="566216817726578" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;You are really hungry...but so is the dog that approached you. Give it your sandwich? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">1</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="566124419530714" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;There is trash on the street, clean it up? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">2</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="406398921968421" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;You are in a hurry, but a grandpa is trying to cross the street, help him? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">3</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="655454788782076" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;A child is crying, cheer her up? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">4</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="511403534126906" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;Your knees hurt but a cat is stuck on a tree, climb up and help it down? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">5</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="883914839351056" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;A woman is carrying some heavy load, help her put them in her car? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">6</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="10" name="Insert" sid="578310142949405" type="HelpRequestsArray">
+                            <param id="0" name="Value">&quot;A man is standing looking sad, cheer him up? Yes (A) No (B)&quot;</param>
+                            <param id="1" name="Index">7</param>
+                            <param id="2" name="Axis">0</param>
                         </action>
                     </actions>
                 </event-block>

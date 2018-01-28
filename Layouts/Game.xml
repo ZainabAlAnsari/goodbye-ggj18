@@ -543,7 +543,7 @@
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
-                <x>0.9</x>
+                <x>0.85</x>
                 <y>1</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
@@ -593,6 +593,31 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="TextBackground" uid="42">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>240</y>
+                        <z>0</z>
+                        <width>512</width>
+                        <height>288</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="Player" uid="11">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -603,6 +628,10 @@
                     <instance-variables>
                         <MaxHealth>128</MaxHealth>
                         <CurrentHealth>128</CurrentHealth>
+                        <MaxLight>128</MaxLight>
+                        <MinLight>0</MinLight>
+                        <CurrentLight>0</CurrentLight>
+                        <Luminance>100</Luminance>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -622,6 +651,15 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -644,6 +682,7 @@
                     </properties>
                     <instance-variables>
                         <MaxWidth>128</MaxWidth>
+                        <MinWidth>0</MinWidth>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -663,10 +702,79 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="LightBar" uid="39">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <MaxWidth>128</MaxWidth>
+                        <MinWidth>0</MinWidth>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>580</x>
+                        <y>345</y>
+                        <z>0</z>
+                        <width>0</width>
+                        <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="HelpRequest" uid="41">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Garamond,-37,700,0</font>
+                        <color>254,169,169</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>400</x>
+                        <y>128</y>
+                        <z>0</z>
+                        <width>480</width>
+                        <height>224</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="HelpRequestsArray" uid="40">
+            <properties>
+                <width>8</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+            <instance-variables>
+                <LastAskedQuestion>-1</LastAskedQuestion>
+                <AQuestionIsBeingAsked>0</AQuestionIsBeingAsked>
+            </instance-variables>
+        </instance>
+    </nonworld-instances>
     <effects />
 </c2layout>

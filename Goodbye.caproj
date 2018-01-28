@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25200</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -25,6 +26,7 @@
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
     </used-effects>
     <configurations>
@@ -92,6 +94,10 @@
             <instance-variables>
                 <instance-variable name="MaxHealth" sid="301059105490196" type="number" />
                 <instance-variable name="CurrentHealth" sid="871151189922968" type="number" />
+                <instance-variable comment="Goodness Value" name="MaxLight" sid="408480812100803" type="number" />
+                <instance-variable name="MinLight" sid="416046135959595" type="number" />
+                <instance-variable name="CurrentLight" sid="884408046211239" type="number" />
+                <instance-variable comment="For AdjustHSL effect" name="Luminance" sid="712752843622146" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="901457283231568">
@@ -101,6 +107,11 @@
                     <behavior id="scrollto" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="153023343283979" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -212,7 +223,39 @@
         </object-type>
         <object-type name="HealthBar" sid="576250932194238">
             <plugin id="TiledBg" />
-            <texture original-source="D:\Projects\Goodbye-GGJ18\Textures\Pink.png" />
+            <texture original-source="D:\Projects\Goodbye-GGJ18\Textures\MidRed.png" />
+        </object-type>
+        <object-type name="LightBar" sid="987143185243782">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projects\Goodbye-GGJ18\Textures\Yellow.png" />
+        </object-type>
+        <object-type global="1" name="HelpRequestsArray" sid="459368166240391">
+            <plugin id="Arr" />
+            <instance-variables>
+                <instance-variable name="LastAskedQuestion" sid="387417502049277" type="number" />
+                <instance-variable comment="Boolean" name="AQuestionIsBeingAsked" sid="717840456140913" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="HelpRequest" sid="932398626828781">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="864596125689114">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="TextBackground" sid="367017707035665">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="710754661207945">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="883447214195393" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projects\Goodbye-GGJ18\Textures\TiledBackgroundNight.png" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -232,9 +275,11 @@
         <family name="PlayerBars" plugin-id="TiledBg" sid="191858323806339">
             <members>
                 <member>HealthBar</member>
+                <member>LightBar</member>
             </members>
             <instance-variables>
                 <instance-variable name="MaxWidth" sid="348870723682504" type="number" />
+                <instance-variable name="MinWidth" sid="365817171956559" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="444038016482245">
