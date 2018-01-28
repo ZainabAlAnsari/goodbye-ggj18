@@ -18,7 +18,7 @@
             <background-color>181,199,255</background-color>
             <transparent>0</transparent>
             <parallax>
-                <x>1</x>
+                <x>0.25</x>
                 <y>1</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
@@ -477,7 +477,7 @@
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
-                <x>1</x>
+                <x>0.5</x>
                 <y>1</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
