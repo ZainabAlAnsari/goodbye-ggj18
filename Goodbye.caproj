@@ -10,7 +10,9 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25200</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -19,6 +21,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects>
@@ -86,6 +89,10 @@
         </object-type>
         <object-type name="Player" sid="583409342119717">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="MaxHealth" sid="301059105490196" type="number" />
+                <instance-variable name="CurrentHealth" sid="871151189922968" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="901457283231568">
                     <behavior id="EightDir" />
@@ -197,6 +204,16 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Audio" sid="444727298225505">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Function" sid="840041186345167">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="HealthBar" sid="576250932194238">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projects\Goodbye-GGJ18\Textures\Pink.png" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Cars" plugin-id="Sprite" sid="987583730477494">
@@ -211,6 +228,19 @@
                 <member>Building</member>
                 <member>Shop</member>
             </members>
+        </family>
+        <family name="PlayerBars" plugin-id="TiledBg" sid="191858323806339">
+            <members>
+                <member>HealthBar</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="MaxWidth" sid="348870723682504" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="444038016482245">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
@@ -231,6 +261,21 @@
         </global-instance>
         <global-instance type="Browser" uid="9" />
         <global-instance type="Keyboard" uid="10" />
+        <global-instance type="Audio" uid="36">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>Yes</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="37" />
     </global-instances>
     <sounds-folder />
     <music-folder />

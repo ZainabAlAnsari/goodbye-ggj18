@@ -4,42 +4,123 @@
     <name>Game</name>
     <events>
         <include>Base</include>
-        <event-block sid="513755490452567">
+        <comment>Initialization</comment>
+        <event-block sid="922454965106287">
             <conditions>
-                <condition id="3" name="Is button down" sid="378719730850727" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">15</param>
-                </condition>
+                <condition id="-2" name="On start of layout" sid="967098991270754" type="System" />
             </conditions>
             <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="670317319883232" type="Player">
-                    <param id="0" name="Control">1</param>
+                <action behavior="Pin" id="0" name="Pin to object" sid="188210069922275" type="HealthBar">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
                 </action>
-                <action id="4" name="Set animation" sid="475573073077406" type="Player">
-                    <param id="0" name="Animation">&quot;Walking&quot;</param>
-                    <param id="1" name="From">1</param>
+                <action id="-10" name="Set value" sid="299537938568398" type="Player">
+                    <param id="0" name="Instance variable">CurrentHealth</param>
+                    <param id="1" name="Value">Self.MaxHealth</param>
+                </action>
+                <action id="0" name="Call function" sid="174605785932185" type="Function">
+                    <param id="0" name="Name">&quot;SetHealth&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="130491686227783">
+        <comment>Gameplay</comment>
+        <event-block sid="597897581796237">
             <conditions>
-                <condition id="7" name="On button released" sid="676036963950420" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">15</param>
+                <condition id="-6" name="Every X seconds" sid="724325101095458" type="System">
+                    <param id="0" name="Interval (seconds)">5.0</param>
+                </condition>
+                <condition id="-7" name="Compare time" sid="732765696145001" type="System">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Time (seconds)">20.0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="658574984894374" type="Player">
+                    <param id="0" name="Instance variable">CurrentHealth</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="656986966276470" type="Player">
-                    <param id="0" name="Animation">&quot;Idle&quot;</param>
-                    <param id="1" name="From">1</param>
+                <action id="0" name="Call function" sid="343266219435065" type="Function">
+                    <param id="0" name="Name">&quot;HurtPlayer&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="770879924491023">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="556220426962259" type="System" />
-            </conditions>
-            <actions />
-        </event-block>
+        <event-group description="" sid="372341037739521" title="Player Movement">
+            <sub-events>
+                <comment>Movement</comment>
+                <event-block sid="513755490452567">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="378719730850727" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="670317319883232" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="475573073077406" type="Player">
+                            <param id="0" name="Animation">&quot;Walking&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="130491686227783">
+                    <conditions>
+                        <condition id="7" name="On button released" sid="676036963950420" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="656986966276470" type="Player">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="664449203926071" title="Functions">
+            <sub-events>
+                <comment>Functions</comment>
+                <event-block sid="514730849728663">
+                    <conditions>
+                        <condition id="0" name="On function" sid="908322853705607" type="Function">
+                            <param id="0" name="Name">&quot;HurtPlayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="647584845207675" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">0.2</param>
+                            <param id="2" name="Mode">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="688140161517644" type="Player">
+                            <param id="0" name="Instance variable">CurrentHealth</param>
+                            <param id="1" name="Value">8</param>
+                        </action>
+                        <action id="0" name="Call function" sid="774889176053815" type="Function">
+                            <param id="0" name="Name">&quot;SetHealth&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="758180127713234">
+                    <conditions>
+                        <condition id="0" name="On function" sid="315824170468874" type="Function">
+                            <param id="0" name="Name">&quot;SetHealth&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="596014355545928" type="PlayerBars">
+                            <param id="0" name="Width">Player.CurrentHealth</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
